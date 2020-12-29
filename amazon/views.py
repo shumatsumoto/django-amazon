@@ -23,4 +23,9 @@ class Itemlist(generic.ListView):
 			q = self.request.GET['q']
 			products = products.filter(name__icontains = q)
 		return products
-	
+
+
+class ItemDetail(generic.DetailView):
+	model = Product
+	template_name = 'amazon/item_detail.html'
+
